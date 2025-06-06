@@ -25,3 +25,6 @@ const blogPosts = [
     contenuto: "Un approfondimento sui vantaggi ambientali ed economici del consumo locale.",
   },
 ];
+21;
+
+export default blogPosts;
