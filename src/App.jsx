@@ -8,8 +8,15 @@ function App() {
 
   const handleNewPost = (event) => {
     event.preventDefault();
-    posts.push(newPost);
-    setPostList([newPost, ...postList]);
+
+    setPostList([
+      {
+        id: Date.now(),
+        titolo: newPost,
+        contenuto: "",
+      },
+      ...postList,
+    ]);
     console.log(postList);
   };
 
@@ -21,6 +28,7 @@ function App() {
 
           <form onSubmit={handleNewPost} className="d-flex my-5">
             <input value={newPost} onChange={(event) => setNewPost(event.target.value)} autoComplete="off" className="form-control" type="text" aria-label="Aggiungi un nuovo articolo" />
+
             <button className="btn btn-success mx-2">+</button>
           </form>
 
